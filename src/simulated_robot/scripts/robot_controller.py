@@ -30,11 +30,7 @@ class RobotController:
         vel_msg = Twist()
 
         #Checking if the movement is forward or backwards
-        if(isForward):
-            vel_msg.linear.x = abs(speed)
-        else:
-            vel_msg.linear.x = -abs(speed)
-
+        vel_msg.linear.x = abs(speed) if isForward else -abs(speed)
        #Since we are moving just in x-axis
         vel_msg.linear.y = 0
         vel_msg.linear.z = 0
